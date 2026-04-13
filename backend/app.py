@@ -1,4 +1,4 @@
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, send_from_directory
 from flask_cors import CORS
 from dotenv import load_dotenv
 from database import get_connection
@@ -8,12 +8,18 @@ import json
 
 load_dotenv()
 
-app = Flask(__name__)
+app = Flask(__name__, 
+    static_folder='../frontend',
+    static_url_path='')
 CORS(app)
 
 @app.route('/')
 def home():
-    return jsonify({'status': 'GameMatch AI API functioneaza!'})
+    return send_from_directory('../frontend', 'GameMatch-AI.html')
+
+@app.route('/pages/<path:filename>')
+def pages(filename):
+    return send_from_directory('../frontend/pages', filename)
 
 @app.route('/api/intreaba', methods=['POST'])
 def intreaba():
