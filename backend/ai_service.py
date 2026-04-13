@@ -24,7 +24,7 @@ def get_raspuns_joc(intrebare):
     """
     
     response = client.models.generate_content(
-        model='gemini-2.5-flash',
+        model='gemini-2.0-flash-lite',
         contents=prompt
     )
     return response.text
@@ -62,7 +62,7 @@ def recomanda_jocuri(gen=None, platforma=None, preferinte=None, mod=None, varsta
     """
     
     response = client.models.generate_content(
-        model='gemini-2.5-flash',
+        model='gemini-2.0-flash-lite',
         contents=prompt
     )
     
@@ -93,7 +93,7 @@ def verifica_etica(intrebare):
     """
     
     response = client.models.generate_content(
-        model='gemini-2.5-flash',
+        model='gemini-2.0-flash-lite',
         contents=prompt
     )
     
