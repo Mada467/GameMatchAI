@@ -1,0 +1,53 @@
+<div class="hero">
+    <h1>GameMatch AI</h1>
+    <p>Intreaba orice despre jocuri — recomandari, sfaturi, comparatii!</p>
+</div>
+
+<div class="container">
+    <div class="platform-btns">
+        <a href="https://store.steampowered.com" target="_blank" class="platform-btn steam">🎮 Steam</a>
+        <a href="https://store.playstation.com" target="_blank" class="platform-btn ps">🎮 PS Store</a>
+        <a href="https://www.xbox.com/games/store" target="_blank" class="platform-btn xbox">🎮 Xbox</a>
+        <a href="https://store.epicgames.com" target="_blank" class="platform-btn epic">🎮 Epic Games</a>
+    </div>
+
+    <div class="card chat-container">
+        <div class="age-filter">
+            <label>Filtru varsta:</label>
+            <select id="age-filter">
+                <option value="toate">Toate varstele</option>
+                <option value="7+">7+</option>
+                <option value="12+">12+</option>
+                <option value="16+">16+</option>
+                <option value="18+">18+</option>
+            </select>
+        </div>
+
+        <div class="chat-messages" id="chat-messages">
+            <div class="message ai">
+                <div class="message-avatar">AI</div>
+                <div class="message-content">
+                    Salut! Sunt GameMatch AI 🎮 Intreaba-ma orice despre jocuri!
+                </div>
+            </div>
+        </div>
+
+        <div class="quick-btns">
+            <button class="quick-btn" onclick="setChat('Recomanda-mi 3 jocuri ca CS2 pe Steam')">3 jocuri ca CS2</button>
+            <button class="quick-btn" onclick="setChat('Cele mai bune jocuri RPG pe PC 2024')">RPG PC 2024</button>
+            <button class="quick-btn" onclick="setChat('Jocuri de aventura pe PS5')">Aventura PS5</button>
+            <button class="quick-btn" onclick="setChat('Cele mai bune jocuri horror')">Horror</button>
+            <button class="quick-btn" onclick="setChat('Jocuri multiplayer gratuite pe PC')">Multiplayer Free</button>
+            <button class="quick-btn" onclick="setChat('Ce inseamna FPS, ping, lag?')">Glossar Gaming</button>
+        </div>
+
+        <div class="search-bar">
+            <input type="text" id="chat-input"
+                placeholder="Ex: Recomanda-mi 2 jocuri de aventura pe PS5..."
+                onkeydown="if(event.key==='Enter') sendChat()"/>
+            <button onclick="sendChat()" id="chat-btn">Trimite</button>
+        </div>
+    </div>
+
+    <div id="chat-games-grid" class="games-grid chat-games-grid"></div>
+</div>

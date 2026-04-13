@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ro" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GameMatch AI - Asistent Gaming</title>
+    <link rel="stylesheet" href="GameMatch-AI.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="nav-brand">
+            <div class="nav-logo">GM</div>
+            <div>
+                <span class="nav-title">GameMatch AI</span>
+                <span class="nav-subtitle">Asistentul tau de gaming</span>
+            </div>
+        </div>
+        <div class="nav-links">
+            <button class="nav-link active" onclick="showPage('chat')">💬 Chat</button>
+            <button class="nav-link" onclick="showPage('finder')">🎮 Game Finder</button>
+            <button class="nav-link" onclick="showPage('pc-config')">💻 PC Config</button>
+            <button class="nav-link" onclick="showPage('compare')">⚔️ Comparator</button>
+            <button class="nav-link" onclick="showPage('tierlist')">🏆 Tier List</button>
+            <button class="nav-link" onclick="showPage('favorites')">❤️ Favorite</button>
+            <button class="theme-toggle" onclick="toggleTheme()" id="theme-btn">🌙</button>
+        </div>
+    </nav>
+
+    <div id="page-content"></div>
+
+    <div class="modal-overlay" id="modal-overlay" onclick="closeModal()">
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <img id="modal-image" class="modal-image" src="" alt=""/>
+            <div class="modal-body">
+                <div class="modal-header">
+                    <h2 class="modal-title" id="modal-title"></h2>
+                    <button class="modal-close" onclick="closeModal()">✕</button>
+                </div>
+                <div class="modal-tags" id="modal-tags"></div>
+                <p class="modal-desc" id="modal-desc"></p>
+                <div class="modal-links" id="modal-links"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="GameMatch-AI.js"></script>
+</body>
+</html>

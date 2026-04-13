@@ -1,0 +1,73 @@
+<div class="hero">
+    <h1>PC Config Checker</h1>
+    <p>Afla ce jocuri poti rula si la ce setari!</p>
+</div>
+
+<div class="container">
+    <div class="card">
+        <h2 class="section-title">Introdu specificatiile PC-ului tau:</h2>
+        <div class="pc-specs-grid">
+            <div class="filter-group">
+                <label>Procesor (CPU)</label>
+                <input type="text" id="spec-cpu" placeholder="Ex: Intel i5-10400, Ryzen 5 3600"/>
+            </div>
+            <div class="filter-group">
+                <label>Placa video (GPU)</label>
+                <input type="text" id="spec-gpu" placeholder="Ex: GTX 1660, RTX 3060, RX 580"/>
+            </div>
+            <div class="filter-group">
+                <label>RAM</label>
+                <select id="spec-ram">
+                    <option value="4GB">4 GB</option>
+                    <option value="8GB" selected>8 GB</option>
+                    <option value="16GB">16 GB</option>
+                    <option value="32GB">32 GB</option>
+                    <option value="64GB">64 GB</option>
+                </select>
+            </div>
+            <div class="filter-group">
+                <label>Stocare</label>
+                <select id="spec-stocare">
+                    <option value="HDD">HDD</option>
+                    <option value="SSD" selected>SSD</option>
+                    <option value="NVMe SSD">NVMe SSD</option>
+                </select>
+            </div>
+            <div class="filter-group">
+                <label>Gen jocuri preferate</label>
+                <input type="text" id="spec-gen" placeholder="Ex: FPS, RPG, open world"/>
+            </div>
+            <div class="filter-group">
+                <label>Rezolutie monitor</label>
+                <select id="spec-rezolutie">
+                    <option value="1080p">1080p (Full HD)</option>
+                    <option value="1440p">1440p (2K)</option>
+                    <option value="4K">4K (Ultra HD)</option>
+                </select>
+            </div>
+            <div class="filter-group">
+                <label>Console detinute</label>
+                <select id="spec-console">
+                    <option value="niciunul">Niciuna</option>
+                    <option value="PS5">PS5</option>
+                    <option value="PS4">PS4</option>
+                    <option value="Xbox Series X">Xbox Series X</option>
+                    <option value="Nintendo Switch">Nintendo Switch</option>
+                </select>
+            </div>
+            <div class="filter-group">
+                <label>Buget jocuri</label>
+                <select id="spec-buget">
+                    <option value="gratuit">Gratuit</option>
+                    <option value="sub 20 euro">Sub 20 euro</option>
+                    <option value="20-50 euro" selected>20-50 euro</option>
+                    <option value="peste 50 euro">Peste 50 euro</option>
+                </select>
+            </div>
+        </div>
+        <button class="btn-primary" onclick="verificaConfig()" id="config-btn">
+            Analizeaza Configuratia
+        </button>
+    </div>
+    <div id="config-results" class="config-results"></div>
+</div>

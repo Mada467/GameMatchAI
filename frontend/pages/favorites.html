@@ -1,0 +1,47 @@
+<div class="hero">
+    <h1>Jocurile Mele Favorite</h1>
+    <p>Colectia ta personala de jocuri preferate!</p>
+</div>
+
+<div class="container">
+    <div class="stat-numbers">
+        <div class="stat-box">
+            <span id="fav-total">0</span>
+            <label>Jocuri salvate</label>
+        </div>
+        <div class="stat-box">
+            <span id="fav-gen">-</span>
+            <label>Gen preferat</label>
+        </div>
+        <div class="stat-box">
+            <span id="fav-platforma">-</span>
+            <label>Platforma preferata</label>
+        </div>
+    </div>
+
+    <div class="card fav-search-card">
+        <div class="search-bar">
+            <input type="text" id="fav-search"
+                placeholder="Cauta in favorite..."
+                oninput="filtreazaFavorite(this.value)"/>
+            <select id="fav-filter-gen" onchange="filtreazaFavorite()" class="fav-filter-select">
+                <option value="">Toate genurile</option>
+                <option value="RPG">RPG</option>
+                <option value="FPS">FPS</option>
+                <option value="aventura">Aventura</option>
+                <option value="sport">Sport</option>
+                <option value="horror">Horror</option>
+                <option value="strategie">Strategie</option>
+                <option value="racing">Racing</option>
+            </select>
+        </div>
+    </div>
+
+    <div id="favorites-grid" class="games-grid">
+        <div class="empty-state">
+            <p class="empty-icon">❤️</p>
+            <p class="empty-title">Nu ai jocuri favorite inca!</p>
+            <p class="empty-subtitle">Adauga jocuri din Chat sau Game Finder</p>
+        </div>
+    </div>
+</div>

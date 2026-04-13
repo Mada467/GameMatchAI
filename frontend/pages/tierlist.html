@@ -1,0 +1,64 @@
+<div class="hero">
+    <h1>Tier List Maker</h1>
+    <p>Creeaza propriul tau tier list de jocuri!</p>
+</div>
+
+<div class="container">
+    <div class="card tier-search-card">
+        <h2 class="section-title">Cauta jocuri pentru tier list:</h2>
+        <div class="search-bar">
+            <input type="text" id="tier-search" placeholder="Ex: GTA 5, Minecraft, CS2..."
+                onkeydown="if(event.key==='Enter') cautaTierJoc()"/>
+            <button onclick="cautaTierJoc()">Cauta</button>
+        </div>
+        <div id="tier-pool" class="tier-pool">
+            <p class="tier-pool-empty">
+                Cauta jocuri si adauga-le aici, apoi trage-le in tier-uri!
+            </p>
+        </div>
+    </div>
+
+    <div class="card tier-card">
+        <div class="tier-header">
+            <h2 class="section-title">Tier List:</h2>
+            <button class="btn-reset" onclick="resetTierList()">Reset</button>
+        </div>
+        <div class="tier-list">
+            <div class="tier-row tier-s">
+                <div class="tier-label">S</div>
+                <div class="tier-games" id="tier-s"
+                    ondragover="allowDrop(event)"
+                    ondrop="dropGame(event, 'tier-s')">
+                </div>
+            </div>
+            <div class="tier-row tier-a">
+                <div class="tier-label">A</div>
+                <div class="tier-games" id="tier-a"
+                    ondragover="allowDrop(event)"
+                    ondrop="dropGame(event, 'tier-a')">
+                </div>
+            </div>
+            <div class="tier-row tier-b">
+                <div class="tier-label">B</div>
+                <div class="tier-games" id="tier-b"
+                    ondragover="allowDrop(event)"
+                    ondrop="dropGame(event, 'tier-b')">
+                </div>
+            </div>
+            <div class="tier-row tier-c">
+                <div class="tier-label">C</div>
+                <div class="tier-games" id="tier-c"
+                    ondragover="allowDrop(event)"
+                    ondrop="dropGame(event, 'tier-c')">
+                </div>
+            </div>
+            <div class="tier-row tier-d">
+                <div class="tier-label">D</div>
+                <div class="tier-games" id="tier-d"
+                    ondragover="allowDrop(event)"
+                    ondrop="dropGame(event, 'tier-d')">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

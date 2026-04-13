@@ -1,0 +1,76 @@
+<div class="hero">
+    <h1>Game Finder</h1>
+    <p>Gaseste jocul perfect pentru tine!</p>
+</div>
+
+<div class="container">
+    <div class="card">
+        <h2 class="section-title">Alege preferintele tale:</h2>
+        <div class="filters-grid">
+            <div class="filter-group">
+                <label>Gen joc</label>
+                <select id="finder-gen">
+                    <option value="">Orice gen</option>
+                    <option value="RPG">RPG</option>
+                    <option value="FPS">FPS / Shooter</option>
+                    <option value="aventura">Aventura</option>
+                    <option value="sport">Sport</option>
+                    <option value="horror">Horror</option>
+                    <option value="strategie">Strategie</option>
+                    <option value="racing">Racing</option>
+                    <option value="fighting">Fighting</option>
+                    <option value="puzzle">Puzzle</option>
+                    <option value="sandbox">Sandbox</option>
+                </select>
+            </div>
+            <div class="filter-group">
+                <label>Platforma</label>
+                <select id="finder-platforma">
+                    <option value="">Orice platforma</option>
+                    <option value="PC Steam">PC Steam</option>
+                    <option value="PS5">PS5</option>
+                    <option value="PS4">PS4</option>
+                    <option value="Xbox Series X">Xbox Series X</option>
+                    <option value="Nintendo Switch">Nintendo Switch</option>
+                    <option value="Mobile">Mobile</option>
+                </select>
+            </div>
+            <div class="filter-group">
+                <label>Mod joc</label>
+                <select id="finder-mod">
+                    <option value="">Orice mod</option>
+                    <option value="single player">Single Player</option>
+                    <option value="multiplayer online">Multiplayer Online</option>
+                    <option value="co-op">Co-op</option>
+                    <option value="local multiplayer">Local Multiplayer</option>
+                </select>
+            </div>
+            <div class="filter-group">
+                <label>Varsta</label>
+                <select id="finder-varsta">
+                    <option value="">Orice varsta</option>
+                    <option value="7+">7+</option>
+                    <option value="12+">12+</option>
+                    <option value="16+">16+</option>
+                    <option value="18+">18+</option>
+                </select>
+            </div>
+            <div class="filter-group">
+                <label>Numar jocuri</label>
+                <select id="finder-numar">
+                    <option value="3">3 jocuri</option>
+                    <option value="5" selected>5 jocuri</option>
+                    <option value="10">10 jocuri</option>
+                </select>
+            </div>
+            <div class="filter-group">
+                <label>Preferinte extra</label>
+                <input type="text" id="finder-preferinte" placeholder="Ex: jocuri gratuite, open world..."/>
+            </div>
+        </div>
+        <button class="btn-primary" onclick="cautaJocuri()" id="finder-btn">
+            Cauta Jocuri
+        </button>
+    </div>
+    <div id="finder-results" class="games-grid finder-results"></div>
+</div>

@@ -1,0 +1,33 @@
+<div class="hero">
+    <h1>Comparator Jocuri</h1>
+    <p>Compara 2 jocuri fata in fata!</p>
+</div>
+
+<div class="container">
+    <div class="card">
+        <div class="compare-grid">
+            <div class="filter-group">
+                <label>Jocul 1</label>
+                <input type="text" id="compare-joc1" placeholder="Ex: GTA 5"
+                    onkeydown="if(event.key==='Enter') compareJocuri()"/>
+            </div>
+            <div class="vs-badge">VS</div>
+            <div class="filter-group">
+                <label>Jocul 2</label>
+                <input type="text" id="compare-joc2" placeholder="Ex: Red Dead Redemption 2"
+                    onkeydown="if(event.key==='Enter') compareJocuri()"/>
+            </div>
+        </div>
+        <div class="compare-quick-btns">
+            <span class="compare-label">Exemple rapide:</span>
+            <button class="quick-btn" onclick="setCompare('GTA 5', 'Red Dead Redemption 2')">GTA 5 vs RDR2</button>
+            <button class="quick-btn" onclick="setCompare('CS2', 'Valorant')">CS2 vs Valorant</button>
+            <button class="quick-btn" onclick="setCompare('FIFA 24', 'eFootball 2024')">FIFA vs eFootball</button>
+            <button class="quick-btn" onclick="setCompare('Elden Ring', 'Dark Souls 3')">Elden Ring vs DS3</button>
+        </div>
+        <button class="btn-primary" onclick="compareJocuri()" id="compare-btn">
+            Compara Jocurile
+        </button>
+    </div>
+    <div id="compare-results" class="compare-results"></div>
+</div>

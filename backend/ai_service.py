@@ -1,5 +1,6 @@
 from google import genai
 import os
+import json
 from dotenv import load_dotenv
 
 load_dotenv()
@@ -10,6 +11,10 @@ def get_raspuns_joc(intrebare):
     prompt = f"""
     Esti GameMatch AI, un asistent expert in jocuri video.
     Stii tot despre jocuri — de la clasice la moderne, PC, console, mobile.
+    Cand recomanzi jocuri, mentioneaza intotdeauna:
+    - Numele exact al jocului
+    - Platforma disponibila
+    - De ce il recomanzi
     
     Raspunde la urmatoarea intrebare despre jocuri:
     {intrebare}
@@ -24,20 +29,24 @@ def get_raspuns_joc(intrebare):
     )
     return response.text
 
-def recomanda_jocuri(gen=None, platforma=None, preferinte=None):
+def recomanda_jocuri(gen=None, platforma=None, preferinte=None, mod=None, varsta=None, numar=5):
     prompt = f"""
     Esti GameMatch AI, expert in recomandari de jocuri video.
     
-    Recomanda 5 jocuri bazat pe urmatoarele preferinte:
+    Recomanda exact {numar} jocuri bazat pe urmatoarele preferinte:
     - Gen: {gen or 'orice'}
     - Platforma: {platforma or 'orice'}
-    - Preferinte: {preferinte or 'jocuri populare'}
+    - Mod joc: {mod or 'orice'}
+    - Varsta: {varsta or 'toate varstele'}
+    - Preferinte extra: {preferinte or 'jocuri populare'}
     
     Pentru fiecare joc include:
-    - Nume
+    - Nume exact
     - Gen
     - Platforma
+    - Rating aproximativ
     - De ce il recomanzi
+    - Varsta recomandata
     
     Raspunde DOAR cu JSON valid:
     [
@@ -45,12 +54,13 @@ def recomanda_jocuri(gen=None, platforma=None, preferinte=None):
             "nume": "Numele jocului",
             "gen": "Gen joc",
             "platforma": "PC/PS5/Xbox/Mobile",
-            "motiv": "De ce il recomanzi"
+            "rating": 9.0,
+            "motiv": "De ce il recomanzi",
+            "varsta": "16+"
         }}
     ]
     """
     
-    import json
     response = client.models.generate_content(
         model='gemini-2.5-flash',
         contents=prompt
@@ -82,7 +92,6 @@ def verifica_etica(intrebare):
     }}
     """
     
-    import json
     response = client.models.generate_content(
         model='gemini-2.5-flash',
         contents=prompt
